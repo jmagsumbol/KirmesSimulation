@@ -5,7 +5,8 @@ package de.oev;
  */
 public class SimulationPerson {
 
-    private static final int PUKE_LEVEL = 10;
+    public static final int MAX_PUKE_LEVEL = 10;
+    public static final int TOILET_LIMIT = 7;
 
     Person person;
 
@@ -13,29 +14,43 @@ public class SimulationPerson {
         this.person = person;
     }
 
-    public void operate(){
 
+    public void pay(int cost){
+        int currentMoney = this.person.getGeld();
+        this.person.setGeld(currentMoney-cost);
+    }
+
+    public void enjoy(int fun){
+        this.person.setSpass(this.person.getSpass()+fun);
+    }
+
+    public void setSick(double sicklevel){
+        this.person.setUebelkeit(Math.floor(this.person.getUebelkeit()+sicklevel));
+    }
+
+    public int getId() {
+        return this.person.getId();
+    }
+
+    public double getUebelkeit() {
+        return this.person.getUebelkeit();
     }
 
 
-
-    public void gotoToilet(){
-        //auf Toilette gehen
+    public int getSpass() {
+        return this.person.getSpass();
     }
 
-    public void exitKirmes(){
-        //verlasse die Kirmes
+
+    public int getGeld() {
+        return this.person.getGeld();
     }
 
-    public void puke(){
-        //Übelkeitslevel erreicht
+    public int getSimStatus() {
+        return this.person.getStatus();
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setSimStatus(int simStatus) {
+        this.person.setStatus(simStatus);
     }
 }

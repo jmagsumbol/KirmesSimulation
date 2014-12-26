@@ -8,7 +8,7 @@ public class Fahrgeschaeft {
     private String id_name;
     private int uebelkeit_level;
     private int kosten;
-    private int anzahl_gaeste;
+    private int max_gaeste;
     private int spass_level;
     private int einnahmen;
 
@@ -16,7 +16,7 @@ public class Fahrgeschaeft {
         this.id_name = _id_name;
         this.uebelkeit_level = _uebelkeit_level;
         this.kosten = _kosten;
-        this.anzahl_gaeste = _anzahl_gaeste;
+        this.max_gaeste = _anzahl_gaeste;
         this.spass_level = _spass_level;
     }
 
@@ -28,33 +28,17 @@ public class Fahrgeschaeft {
         return this.uebelkeit_level;
     }
 
-    public void setUebelkeit_level(int val){
-        this.uebelkeit_level = val;
-    }
-
     public int getKosten() {
         return kosten;
-    }
-
-    public void setKosten(int kosten) {
-        this.kosten = kosten;
     }
 
     public int getSpass_level() {
         return spass_level;
     }
 
-    public void setSpass_level(int spass_level) {
-        this.spass_level = spass_level;
-    }
+    public int getMax_gaeste() {
 
-    public int getAnzahl_gaeste() {
-
-        return anzahl_gaeste;
-    }
-
-    public void setAnzahl_gaeste(int anzahl_gaeste) {
-        this.anzahl_gaeste = anzahl_gaeste;
+        return max_gaeste;
     }
 
     public int getEinnahmen() {

@@ -15,11 +15,18 @@ public class PrepSimFahrgeschaefte {
         simsFahrgeschaefte = new ArrayList<SimulationFahrgeschaeft>();
     }
 
-    public void createSims(){
+    public void createSimFahrgeschaefte(){
 
         for(Fahrgeschaeft fahr: this.fg){
-            SimulationFahrgeschaeft s = new SimulationFahrgeschaeft(fahr);
-            simsFahrgeschaefte.add(s);
+            boolean  b = fahr.getId_name().startsWith("Toilette");
+            if(b == true){
+                SimToilette t = new SimToilette(fahr);
+                simsFahrgeschaefte.add(t);
+            }
+            else {
+                SimulationFahrgeschaeft s = new SimulationFahrgeschaeft(fahr);
+                simsFahrgeschaefte.add(s);
+            }
         }
     }
 

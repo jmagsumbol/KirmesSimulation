@@ -5,13 +5,14 @@ package de.oev;
  */
 public class Person {
 
-    public static final int NOMONEY = 0;
-    public static final int TOILET = 1;
-    public static final int PUKE = 2;
+    public static final int NORMAL = 0;
+    public static final int NOMONEY = 1;
+    public static final int TOILET = 2;
+    public static final int PUKE = 3;
 
     private int id;
     private int geld;
-    private int uebelkeit;
+    private double uebelkeit;
     private int spass;
     private int status;
 
@@ -26,11 +27,11 @@ public class Person {
         return id;
     }
 
-    public int getUebelkeit() {
+    public double getUebelkeit() {
         return uebelkeit;
     }
 
-    public void setUebelkeit(int uebelkeit) {
+    public void setUebelkeit(double uebelkeit) {
         this.uebelkeit = uebelkeit;
     }
 

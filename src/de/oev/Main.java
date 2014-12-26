@@ -2,7 +2,6 @@ package de.oev;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.io.IOException;
@@ -17,12 +16,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("******** MAIN START *****");
+
         getPropertyFile();
         ArrayList<Fahrgeschaeft>fahrgeschaefte = createFahrgeschaefte();
-        ArrayList<Person>personen = createPersonen(10);
+        ArrayList<Person>personen = createPersonen(Integer.parseInt(args[0]));
 
         mainSimulation = new MainSimulation(fahrgeschaefte, personen);
+        mainSimulation.prepSimulation();
         mainSimulation.startSimulation();
+
 
     }
 
@@ -66,8 +69,10 @@ public class Main {
             int _gaeste = Integer.parseInt(keyArray[2]);
             int _spass = Integer.parseInt(keyArray[3]);
 
-            Fahrgeschaeft tmp = new Fahrgeschaeft(key,_uebelkeit,_kosten,_gaeste,_spass);
+
+            Fahrgeschaeft tmp = new Fahrgeschaeft(key, _uebelkeit, _kosten, _gaeste, _spass);
             tmpFahrgeschaefte.add(tmp);
+
         }
 
         // Fahrgeschäft output
